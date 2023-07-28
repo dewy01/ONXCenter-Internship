@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit klient</title>
+    <title>Edit pracownik</title>
 </head>
 <body>
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Edit klient</h2>
+                <h2>Edit pracownik</h2>
                 @if(Session::has('success'))
                     <div class="alert alert-success" role="alert">{{Session::get('success') }}</div>
                 @endif
-                <form method="post" action="{{url('update-klient')}}">
+                <form method="post" action="{{url('update-pracownik')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{$data->id}}">
                     <div class="md-3">
@@ -30,7 +30,7 @@
 
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="{{url('klient-list')}}" class="btn btn-danger">Back</a>
+                    <a href="{{url('pracownik-list')}}" class="btn btn-danger">Back</a>
                 </form>
             </div>
         </div>
