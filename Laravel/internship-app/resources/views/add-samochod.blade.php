@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add zamowienie</title>
+    <title>Add samochod</title>
 </head>
 <body>
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Add zamowienie</h2>
+                <h2>Add samochod</h2>
                 @if(Session::has('success'))
                     <div class="alert alert-success" role="alert">{{Session::get('success') }}</div>
                 @endif
-                <form method="post" action="{{url('save-zamowienie')}}">
+                <form method="post" action="{{url('save-samochod')}}">
                     @csrf
                     <div class="md-3">
                         <label class="form-label">Name</label>
@@ -26,30 +26,10 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="md-3">
-                        <label class="form-label">id_klienta</label>
-                        <input type="text" class="form-control" name="id_klienta" placeholder="Enter Name" value="{{old('id_klienta')}}">
-                        @error('id_klienta')
-                            </br>
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="md-3">
-                        <label class="form-label">id_samochodu</label>
-                        <input type="text" class="form-control" name="id_samochodu" placeholder="Enter Name" value="{{old('id_samochodu')}}">
-                        @error('id_samochodu')
-                            </br>
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
 
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="{{url('zamowienie-list')}}" class="btn btn-danger">Back</a>
+                    <a href="{{url('samochod-list')}}" class="btn btn-danger">Back</a>
                 </form>
             </div>
         </div>

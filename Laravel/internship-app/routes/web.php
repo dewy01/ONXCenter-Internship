@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KlientController;
 use App\Http\Controllers\ZamowienieController;
 use App\Http\Controllers\PracownikController;
+use App\Http\Controllers\SamochodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,10 @@ Route::post('update-pracownik',[PracownikController::class,'updatePracownik']);
 Route::get('edit-pracownik/{id}',[PracownikController::class,'editPracownik']);
 Route::get('delete-pracownik/{id}',[PracownikController::class,'deletePracownik']);
 
+/* ROUTES FOR SAMOCHOD */
+Route::get('samochod-list',[SamochodController::class,'index']);
+Route::get('add-samochod',[SamochodController::class,'addSamochod']);
+Route::post('save-samochod',[SamochodController::class,'saveSamochod']);
+Route::post('update-samochod',[SamochodController::class,'updateSamochod']);
+Route::get('edit-samochod/{id}',[SamochodController::class,'editSamochod']);
+Route::get('delete-samochod/{id}',[SamochodController::class,'deleteSamochod']);

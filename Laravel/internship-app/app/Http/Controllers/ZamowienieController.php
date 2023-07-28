@@ -21,14 +21,17 @@ class ZamowienieController extends Controller
         //dd($request->all());
         $request->validate([
             'nazwa' => 'required',
-            'id_klienta' => 'required'
+            'id_klienta' => 'required',
+            'id_samochodu' => 'required'
         ]);
         $nazwa=$request->nazwa;
         $id_klienta=$request->id_klienta;
+        $id_samochodu=$request->id_samochodu;
 
         $zam = new Zamowienie();
         $zam->nazwa= $nazwa;
         $zam->id_klienta = $id_klienta;
+        $zam->id_samochodu = $id_samochodu;
         $zam->save();
         
         return redirect()->back()->with('success','Zamowienie Added Succesfully');
@@ -42,15 +45,18 @@ class ZamowienieController extends Controller
     public function updateZamowienie(Request $request){
         $request->validate([
             'nazwa' => 'required',
-            'id_klienta' => 'required'
+            'id_klienta' => 'required',
+            'id_samochodu' => 'required'
         ]);
         $nazwa=$request->nazwa;
         $id_klienta=$request->id_klienta;
+        $zam->id_samochodu = $id_samochodu;
         $id=$request->id;
 
         Zamowienie::where('id','=',$id)->update([
             'nazwa'=>$nazwa,
-            'id_klienta'=>$id_klienta
+            'id_klienta'=>$id_klienta,
+            'id_samochodu'=>$id_samochodu
         ]);
         return redirect()->back()->with('success','Zamowienie Updated Succesfully');
     }

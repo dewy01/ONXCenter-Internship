@@ -4,16 +4,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klient list</title>
+    <title>Samochod list</title>
 </head>
 <body>
-    
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Klient list</h2>
+                <h2>Samochod list</h2>
                 <div style="margin-right:10px; float:right;">
-                    <a href="{{url('add-klient')}}" class="btn btn-primary">Add</a>
+                    <a href="{{url('add-samochod')}}" class="btn btn-primary">Add</a>
                 </div>
                 </br>
                 
@@ -30,13 +29,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $kli)
+                        @foreach ($data as $sam)
                             <tr>
-                                <td>{{$kli->id}}</td>
-                                <td>{{$kli->nazwa}}</td>
+                                <td>{{$sam->id}}</td>
+                                <td>{{$sam->nazwa}}</td>
                                 <td>
-                                <a href="{{url('edit-klient/'.$kli->id)}}" class="btn btn-primary">Edit</a>    
-                                | <a href="{{url('delete-klient/'.$kli->id)}}" class="btn btn-danger">Delete</a> </td>
+                                <a href="{{url('edit-samochod/'.$sam->id)}}" class="btn btn-primary">Edit</a>    
+                                | <a href="{{url('delete-samochod/'.$sam->id)}}" class="btn btn-danger">Delete</a> </td>
                             </tr>
                         @endforeach
                     </tbody>

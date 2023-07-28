@@ -26,6 +26,7 @@
                         <th>#</th>
                         <th>Nazwa</th>
                         <th>Id_klienta</th>
+                        <th>Id_samochodu</th>
                         <th>Akcja</th>
                     </tr>
                     </thead>
@@ -35,6 +36,7 @@
                                 <td>{{$zam->id}}</td>
                                 <td>{{$zam->nazwa}}</td>
                                 <td>{{$zam->id_klienta}}</td>
+                                <td>{{$zam->id_samochodu}}</td>
                                 <td>
                                 <a href="{{url('edit-zamowienie/'.$zam->id)}}" class="btn btn-primary">Edit</a>    
                                 | <a href="{{url('delete-zamowienie/'.$zam->id)}}" class="btn btn-danger">Delete</a> </td>
