@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KlientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('klient-list',[KlientController::class,'index']);
+Route::get('add-klient',[KlientController::class,'addKlient']);
+Route::post('save-klient',[KlientController::class,'saveKlient']);
+Route::post('update-klient',[KlientController::class,'updateKlient']);
+Route::get('edit-klient/{id}',[KlientController::class,'editKlient']);
+Route::get('delete-klient/{id}',[KlientController::class,'deleteKlient']);
+
