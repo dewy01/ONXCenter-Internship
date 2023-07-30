@@ -26,6 +26,16 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="md-3">
+                        <label class="form-label">id_pracownika</label>
+                        <input type="text" class="form-control" name="id_pracownika" placeholder="Enter Name" value="{{old('id_pracownika')}}">
+                        @error('id_pracownika')
+                            </br>
+                            <div class="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
 
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>

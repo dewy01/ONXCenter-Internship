@@ -26,6 +26,7 @@
                     <tr>
                         <th>#</th>
                         <th>Nazwa</th>
+                        <th>Id_pracownika</th>
                         <th>Akcja</th>
                     </tr>
                     </thead>
@@ -34,6 +35,7 @@
                             <tr>
                                 <td>{{$kli->id}}</td>
                                 <td>{{$kli->nazwa}}</td>
+                                <td>{{$kli->id_pracownika}}</td>
                                 <td>
                                 <a href="{{url('edit-klient/'.$kli->id)}}" class="btn btn-primary">Edit</a>    
                                 | <a href="{{url('delete-klient/'.$kli->id)}}" class="btn btn-danger">Delete</a> </td>

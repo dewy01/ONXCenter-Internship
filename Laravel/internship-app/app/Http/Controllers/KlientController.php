@@ -20,12 +20,15 @@ class KlientController extends Controller
     public function saveKlient(Request $request){
         //dd($request->all());
         $request->validate([
-            'nazwa' => 'required'
+            'nazwa' => 'required',
+            'id_pracownika' => 'required'
         ]);
         $nazwa=$request->nazwa;
+        $id_pracownika=$request->id_pracownika;
 
         $kli = new Klient();
         $kli->nazwa= $nazwa;
+        $kli->id_pracownika = $id_pracownika;
         $kli->save();
         
         return redirect()->back()->with('success','Klient Added Succesfully');
@@ -38,13 +41,16 @@ class KlientController extends Controller
 
     public function updateKlient(Request $request){
         $request->validate([
-            'nazwa' => 'required'
+            'nazwa' => 'required',
+            'id_pracownika' => 'required'
         ]);
         $nazwa=$request->nazwa;
+        $id_pracownika=$request->id_pracownika;
         $id=$request->id;
 
         Klient::where('id','=',$id)->update([
-            'nazwa'=>$nazwa
+            'nazwa'=>$nazwa,
+            'id_pracownika'=>$id_pracownika
         ]);
         return redirect()->back()->with('success','Klient Updated Succesfully');
     }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pracownik extends Model
 {
     use HasFactory;
+    function getKlient(){
+        return $this->hasMany('App\Models\Klient');
+    }
 }
